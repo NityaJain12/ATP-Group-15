@@ -2,6 +2,8 @@
 # Interest score = number of shared interests / number of total unique interests
 
 def clean_interests(interest_list):
+""" Make the list of interests entered by the user a set of tidy words. 
+"Music" and "music" become the same word, blank entries are ignored, and repeaded entries are removed automatically as sets don't have repeated elements."""
 cleaned = set()
 for interest in interest_list:
 word = interest.strip().lower()
