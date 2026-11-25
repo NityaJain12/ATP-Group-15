@@ -1,1 +1,5 @@
+# This file compares the interests of two people using sets.
+# Interest score = number of shared interests / number of total unique interests
 
+def clean_interests(interest_list):
+cleaned = set()
