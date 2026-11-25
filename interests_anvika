@@ -3,3 +3,8 @@
 
 def clean_interests(interest_list):
 cleaned = set()
+for interest in linterest_list:
+word = interest.lower()
+if word != "":
+cleaned.add(word)
+return cleaned
