@@ -1,5 +1,14 @@
-# This file compares the interests of two people using sets.
+# This file compares the interests of two people using sets to evaluate their compatibility.
 # Interest score = number of shared interests / number of total unique interests
+#
+# Example
+# {hiking, chess, movies} and {hiking, chess, ccoking, music}
+# shared = {hiking, chess}
+# combined = {hiking, chess, movies, cooking, music}
+# interest_score = 2/5 = 0.4
+#
+#Thus, this gives us an interest compatibility score. 
+# This number is always between 0 (nothing in common) and 1 (same exact interests).
 
 def clean_interests(interest_list):
 """ Make the list of interests entered by the user a set of tidy words. 
@@ -10,3 +19,18 @@ word = interest.strip().lower()
 if word != "":
 cleaned.add(word)
 return cleaned
+
+def shared_interests(person, other):
+""" Return the set of interests that both people have. (intersection)"""
+person_set = clean_interest(person["interests"])
+other_set = clean_interest(other["interests"])
+return person_set.intersection(other_set)
+
+def combined_interests(person, other)
+""" Return the set of all different/distinct interests that the people have. (union)"""
+person_set = clean_interest(person["interests"])
+other_set = clean_interest(other["interests"])
+return person_set.union(other_set)
+
+
+
