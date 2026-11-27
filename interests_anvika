@@ -23,14 +23,22 @@ return cleaned
 def shared_interests(person, other):
 """ Return the set of interests that both people have. (intersection)"""
 person_set = clean_interest(person["interests"])
-other_set = clean_interest(other["interests"])
+other_set = clean_interests(other["interests"])
 return person_set.intersection(other_set)
 
 def combined_interests(person, other)
 """ Return the set of all different/distinct interests that the people have. (union)"""
-person_set = clean_interest(person["interests"])
-other_set = clean_interest(other["interests"])
+person_set = clean_interests(person["interests"])
+other_set = clean_interests(other["interests"])
 return person_set.union(other_set)
+
+def interest_score(person, other)
+""" Return interest_score = shared/combined """
+shared = shared_interests(person, other)
+combined = combined_interests(person, other)
+return shared/combined
+
+
 
 
 
